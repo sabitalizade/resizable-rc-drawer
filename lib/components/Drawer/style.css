@@ -1,0 +1,121 @@
+.mask-motion-enter-active,
+.mask-motion-appear-active,
+.mask-motion-leave-active {
+	transition: all 0.3s;
+}
+.mask-motion-enter,
+.mask-motion-appear {
+	opacity: 0;
+}
+.mask-motion-enter-active,
+.mask-motion-appear-active {
+	opacity: 1;
+}
+.mask-motion-leave {
+	opacity: 1;
+}
+.mask-motion-leave-active {
+	opacity: 0;
+}
+.panel-motion-left-enter-start,
+.panel-motion-left-appear-start,
+.panel-motion-left-leave-start {
+	transition: none !important;
+}
+.panel-motion-left-enter-active,
+.panel-motion-left-appear-active,
+.panel-motion-left-leave-active {
+	transition: all 0.3s;
+}
+.panel-motion-left-enter,
+.panel-motion-left-appear {
+	transform: translateX(-100%);
+}
+.panel-motion-left-enter-active,
+.panel-motion-left-appear-active {
+	transform: translateX(0);
+}
+.panel-motion-left-leave {
+	transform: translateX(0);
+}
+.panel-motion-left-leave-active {
+	transform: translateX(-100%) !important;
+}
+.panel-motion-right-enter-start,
+.panel-motion-right-appear-start,
+.panel-motion-right-leave-start {
+	transition: none !important;
+}
+.panel-motion-right-enter-active,
+.panel-motion-right-appear-active,
+.panel-motion-right-leave-active {
+	transition: all 0.3s;
+}
+.panel-motion-right-enter,
+.panel-motion-right-appear {
+	transform: translateX(100%);
+}
+.panel-motion-right-enter-active,
+.panel-motion-right-appear-active {
+	transform: translateX(0);
+}
+.panel-motion-right-leave {
+	transform: translateX(0);
+}
+.panel-motion-right-leave-active {
+	transform: translateX(100%) !important;
+}
+
+.rc-drawer-title-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1rem;
+	border-bottom: 1px solid #e5e5e5;
+	position: sticky;
+	top: 0;
+	left: 0;
+	background-color: #fff;
+	z-index: 10;
+}
+.rc-drawer-title {
+	/* text-lg font-semibold */
+	font-size: 1.125rem;
+	font-weight: 600;
+	margin: 0;
+}
+.rc-drawer-close-btn {
+	/* text-gray-400 hover:text-gray-500 */
+	color: #718096;
+	transition: color 0.3s;
+	background-color: #e4e4e4e1;
+	border: none;
+	cursor: pointer;
+	padding: 0.5rem;
+	border-radius: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.rc-drawer-close-btn:hover {
+	color: #000000;
+	background-color: #e4e4e4;
+}
+
+[data-theme="compact"] .ant-drawer-body p {
+	margin-bottom: 0;
+}
+
+.sidebar-dragger {
+	width: 5px;
+	cursor: ew-resize;
+	padding: "4px 0 0";
+	border-top: 1px solid #ddd;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	z-index: 100;
+	background-color: #ddd;
+}
