@@ -36,10 +36,10 @@ const ResizableDrawer = ({
 	}
 
 	function handleMousemove(e: MouseEvent) {
-		let offsetRight =
+		const offsetRight =
 			document.body.offsetWidth - (e.clientX - document.body.offsetLeft);
-		let minWidth = props.width || 300;
-		let maxWidth = window.innerWidth - 10;
+		const minWidth = props.width || 300;
+		const maxWidth = window.innerWidth - 10;
 		if (offsetRight > Number(minWidth) && offsetRight < maxWidth) {
 			setDrawerWidth(offsetRight);
 		}
