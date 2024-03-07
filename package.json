@@ -52,6 +52,13 @@
 	],
 	"author": "Sabit Alizade",
 	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/sabitalizade/resizable-rc-drawer/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/sabitalizade/resizable-rc-drawer.git"
+	},
 	"dependencies": {
 		"rc-drawer": "^7.1.0",
 		"react": "^18.2.0",
