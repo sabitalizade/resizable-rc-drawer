@@ -1,4 +1,4 @@
-**Library Name: rc-drawer-resizable**
+**Library Name: resizable-rc-drawer**
 
 ## Description
 
@@ -6,10 +6,10 @@ The resizable-rc-drawer library is an extension of the popular `rc-drawer` libra
 
 ## Installation
 
-You can install `rc-drawer-resizable` via npm:
+You can install resizable-rc-drawer via npm:
 
 ```bash
-npm install rc-drawer-resizable
+npm install resizable-rc-drawer
 ```
 
 ## Usage
