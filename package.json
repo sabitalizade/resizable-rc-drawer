@@ -51,7 +51,7 @@
 		"test"
 	],
 	"author": "Sabit Alizade",
-	"license": "ISC",
+	"license": "MIT",
 	"bugs": {
 		"url": "https://github.com/sabitalizade/resizable-rc-drawer/issues"
 	},

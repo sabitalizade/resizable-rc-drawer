@@ -41,45 +41,11 @@ export default MyComponent;
 
 ### Additional Props
 
-- **minWidth** *(number)*: The minimum width the drawer can be resized to.
-- **minHeight** *(number)*: The minimum height the drawer can be resized to.
-- **maxWidth** *(number)*: The maximum width the drawer can be resized to.
-- **maxHeight** *(number)*: The maximum height the drawer can be resized to.
-- **onResizeStart** *(function)*: Callback function invoked when resizing starts.
-- **onResize** *(function)*: Callback function invoked during resizing.
-- **onResizeStop** *(function)*: Callback function invoked when resizing stops.
+- **width** *(number)*: The minimum width the drawer can be resized to.
 
 ### Inherited Props
 
 All props from `rc-drawer` can also be used.
-
-## Example
-
-```jsx
-import React from 'react';
-import { Drawer } from 'resizable-rc-drawer';
-
-const MyComponent = () => {
-  return (
-    <Drawer
-      width={300}
-      height={500}
-      onClose={() => {}}
-      minWidth={200}
-      minHeight={300}
-      maxWidth={600}
-      maxHeight={800}
-      onResizeStart={() => console.log('Resize started')}
-      onResize={(width, height) => console.log(`Resized to ${width} x ${height}`)}
-      onResizeStop={() => console.log('Resize stopped')}
-    >
-      {/* Content of the drawer */}
-    </Drawer>
-  );
-}
-
-export default MyComponent;
-```
 
 ## Contributing
 
@@ -95,7 +61,7 @@ This library is built upon `rc-drawer`, and we are grateful for the contribution
 
 ## Author
 
-[Your Name]
+Sabit Alizade
 
 ## Contact
 
