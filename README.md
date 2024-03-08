@@ -62,7 +62,3 @@ This library is built upon `rc-drawer`, and we are grateful for the contribution
 ## Author
 
 Sabit Alizade
-
-## Contact
-
-For any inquiries or support, please contact [your email or preferred contact method].
