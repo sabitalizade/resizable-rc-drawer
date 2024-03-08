@@ -2,7 +2,7 @@
 
 ## Description
 
-The `rc-drawer-resizable` library is an extension of the popular `rc-drawer` library with added functionality for resizable drawers. `rc-drawer` is a widely used library for creating customizable and responsive drawers in web applications. With `rc-drawer-resizable`, users can resize the drawers dynamically, providing enhanced flexibility and usability.
+The resizable-rc-drawer library is an extension of the popular `rc-drawer` library with added functionality for resizable drawers. `rc-drawer` is a widely used library for creating customizable and responsive drawers in web applications. With resizable-rc-drawer, users can resize the drawers dynamically, providing enhanced flexibility and usability.
 
 ## Installation
 
@@ -14,7 +14,7 @@ npm install rc-drawer-resizable
 
 ## Usage
 
-Using `rc-drawer-resizable` is similar to using `rc-drawer`. Simply import the component and use it in your React application. The resizable functionality is enabled by default.
+Using resizable-rc-drawer is similar to using `rc-drawer`. Simply import the component and use it in your React application. The resizable functionality is enabled by default.
 
 ```jsx
 import React from 'react';
@@ -37,7 +37,7 @@ export default MyComponent;
 
 ## Props
 
-`rc-drawer-resizable` supports all the props available in `rc-drawer` along with additional props for controlling the resizable functionality.
+resizable-rc-drawer supports all the props available in `rc-drawer` along with additional props for controlling the resizable functionality.
 
 ### Additional Props
 
