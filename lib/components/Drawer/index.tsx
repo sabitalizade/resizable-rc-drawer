@@ -6,14 +6,17 @@ let isResizing: boolean | null = null;
 
 export type ResizableDrawerProps = DrawerProps & {
 	title?: string;
-	closable?: boolean;
+	titleClosable?: boolean;
+	minWidth?: number;
+	maxWidth?: number;
+	onResize?: (width: number) => void;
 };
 
 const ResizableDrawer = ({
 	children,
 	...props
 }: PropsWithChildren & ResizableDrawerProps) => {
-	const [drawerWidth, setDrawerWidth] = useState(props.width || 300);
+	const [drawerWidth, setDrawerWidth] = useState(props.width || 378);
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	const cbHandleMouseMove = React.useCallback(handleMousemove, []);
 	// eslint-disable-next-line react-hooks/exhaustive-deps
@@ -38,10 +41,13 @@ const ResizableDrawer = ({
 	function handleMousemove(e: MouseEvent) {
 		const offsetRight =
 			document.body.offsetWidth - (e.clientX - document.body.offsetLeft);
-		const minWidth = props.width || 300;
-		const maxWidth = window.innerWidth - 10;
+		const minWidth = props?.minWidth || props.width || 378;
+		const maxWidth = props?.maxWidth || window.innerWidth - 10;
 		if (offsetRight > Number(minWidth) && offsetRight < maxWidth) {
 			setDrawerWidth(offsetRight);
+			if (props.onResize) {
+				props.onResize(offsetRight);
+			}
 		}
 	}
 
@@ -51,7 +57,7 @@ const ResizableDrawer = ({
 			{props?.title && (
 				<Title
 					title={props.title}
-					closable={props.closable}
+					titleClosable={props.titleClosable}
 					onClose={props.onClose}
 				/>
 			)}
@@ -62,13 +68,13 @@ const ResizableDrawer = ({
 
 const Title = ({
 	title,
-	closable = true,
+	titleClosable = true,
 	onClose = () => {},
 }: ResizableDrawerProps) => {
 	return (
 		<div className="rc-drawer-title-container">
 			<h3 className="rc-drawer-title">{title}</h3>
-			{closable && (
+			{titleClosable && (
 				<button onClick={onClose} className="rc-drawer-close-btn">
 					<svg
 						stroke="currentColor"
