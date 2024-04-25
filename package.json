@@ -48,7 +48,20 @@
 		"lib": "lib"
 	},
 	"keywords": [
-		"test"
+		"resizable-rc-drawer",
+		"resizable",
+		"rc",
+		"rc-drawer",
+		"react",
+		"react-component",
+		"react-drawer",
+		"drawer",
+		"drawer-menu",
+		"rc-drawer-menu",
+		"react-drawer-menu",
+		"animation",
+		"drawer-motion",
+		"drawer-animation"
 	],
 	"author": "Sabit Alizade",
 	"license": "MIT",
