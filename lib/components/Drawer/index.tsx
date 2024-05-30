@@ -1,26 +1,30 @@
-import React, { PropsWithChildren, useState } from "react";
-import Drawer, { DrawerProps } from "rc-drawer";
+import React, { PropsWithChildren, useEffect, useState } from "react";
+import Drawer from "rc-drawer";
 import motionProps from "./motion";
+import { ResizableDrawerProps } from "./types";
+import Title from "./Title";
 
 let isResizing: boolean | null = null;
-
-export type ResizableDrawerProps = DrawerProps & {
-	title?: string;
-	titleClosable?: boolean;
-	minWidth?: number;
-	maxWidth?: number;
-	onResize?: (width: number) => void;
-};
 
 const ResizableDrawer = ({
 	children,
 	...props
 }: PropsWithChildren & ResizableDrawerProps) => {
+	const { resizable = true } = props;
 	const [drawerWidth, setDrawerWidth] = useState(props.width || 378);
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	const cbHandleMouseMove = React.useCallback(handleMousemove, []);
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	const cbHandleMouseUp = React.useCallback(handleMouseup, []);
+
+	useEffect(() => {
+		if (props?.maxWidth) {
+			if (props?.maxWidth < Number(drawerWidth)) {
+				setDrawerWidth(props.maxWidth);
+			}
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [props.maxWidth]);
 
 	function handleMouseup() {
 		if (!isResizing) {
@@ -53,43 +57,19 @@ const ResizableDrawer = ({
 
 	return (
 		<Drawer {...props} width={drawerWidth} {...motionProps}>
-			<div className="sidebar-dragger" onMouseDown={handleMousedown} />
+			{resizable && (
+				<div className="sidebar-dragger" onMouseDown={handleMousedown} />
+			)}
 			{props?.title && (
 				<Title
 					title={props.title}
+					closeButton={props.closeButton}
 					titleClosable={props.titleClosable}
 					onClose={props.onClose}
 				/>
 			)}
 			{children}
 		</Drawer>
-	);
-};
-
-const Title = ({
-	title,
-	titleClosable = true,
-	onClose = () => {},
-}: ResizableDrawerProps) => {
-	return (
-		<div className="rc-drawer-title-container">
-			<h3 className="rc-drawer-title">{title}</h3>
-			{titleClosable && (
-				<button onClick={onClose} className="rc-drawer-close-btn">
-					<svg
-						stroke="currentColor"
-						fill="currentColor"
-						stroke-width="0"
-						viewBox="0 0 512 512"
-						height="1em"
-						width="1em"
-						xmlns="http://www.w3.org/2000/svg"
-					>
-						<path d="M400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49z"></path>
-					</svg>
-				</button>
-			)}
-		</div>
 	);
 };
 
