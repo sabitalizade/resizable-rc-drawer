@@ -10,7 +10,7 @@ const ResizableDrawer = ({
 	children,
 	...props
 }: PropsWithChildren & ResizableDrawerProps) => {
-	const { resizeable = true } = props;
+	const { resizable = true } = props;
 	const [drawerWidth, setDrawerWidth] = useState(props.width || 378);
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	const cbHandleMouseMove = React.useCallback(handleMousemove, []);
@@ -57,7 +57,7 @@ const ResizableDrawer = ({
 
 	return (
 		<Drawer {...props} width={drawerWidth} {...motionProps}>
-			{resizeable && (
+			{resizable && (
 				<div className="sidebar-dragger" onMouseDown={handleMousedown} />
 			)}
 			{props?.title && (

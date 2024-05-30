@@ -6,6 +6,6 @@ export type ResizableDrawerProps = DrawerProps & {
 	titleClosable?: boolean;
 	minWidth?: number;
 	maxWidth?: number;
-	resizeable?: boolean;
+	resizable?: boolean;
 	onResize?: (width: number) => void;
 };
